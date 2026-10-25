@@ -125,7 +125,9 @@ def construir():
         + ISOTIPO.replace("<svg ", "<svg x='15' y='14' width='34' height='36' style='color:#F2EEE6' ", 1) + "</svg>",
         encoding="utf-8",
     )
-    (SALIDA / "CNAME").write_text(SITIO["dominio"] + "\n", encoding="utf-8")
+    # El dominio se activa solo cuando el DNS de juanchica.com ya apunte a GitHub Pages.
+    if SITIO.get("dominio_activo"):
+        (SALIDA / "CNAME").write_text(SITIO["dominio"] + "\n", encoding="utf-8")
     (SALIDA / ".nojekyll").write_text("", encoding="utf-8")
 
     # Portada

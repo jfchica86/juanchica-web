@@ -19,6 +19,6 @@ Piedra #6E685D, Tierra #C9BBA6, Crudo #F2EEE6.
 | Sitio generado (no editar a mano) | `docs/` |
 
 ## Dominio
-`juanchica.com` → GitHub Pages (`docs/CNAME`). Las apps quedan en `app.juanchica.com` → Render
+`juanchica.com` → GitHub Pages: poner `"dominio_activo": true` en `sitio.json` y reconstruir cuando el DNS ya apunte (eso crea `docs/CNAME`). Las apps quedan en `app.juanchica.com` → Render
 (`juanchica-portal`). Mientras el DNS no cambie, el botón Entrar apunta a
 `juanchica-portal.onrender.com/login` (`apps_url` en `sitio.json`).
