@@ -54,6 +54,7 @@ a:hover { text-decoration-color: var(--tinta); }
 /* Portada */
 .inicio { padding: 48px 0 8px; border-bottom: 1px solid var(--linea); }
 .intro { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--piedra); margin: 0 0 40px; }
+.intro .quien { color: var(--tinta); font-weight: 400; }
 .rotulo { font-size: 14px; color: var(--piedra); margin: 0 0 6px; }
 .tarjetas { display: grid; gap: 8px 48px; margin-bottom: 40px; }
 .tarjetas.dos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
