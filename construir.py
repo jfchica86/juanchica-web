@@ -182,7 +182,27 @@ def construir():
             pagina(f"{x['titulo']} · juanchica", x["bajada"] or x["titulo"], cuerpo, "../../assets/estilos.css", "../../"),
             encoding="utf-8")
 
-    print(f"Listo: portada + blog con {len(entradas)} entrada(s) publicadas en docs/")
+    # Páginas sueltas: contenido/paginas/<slug>.md → /<slug>/
+    paginas = 0
+    for f in sorted((RAIZ / "contenido" / "paginas").glob("*.md")):
+        m = re.match(r"^---\n(.*?)\n---\n(.*)$", f.read_text(encoding="utf-8"), re.S)
+        if not m:
+            raise SystemExit(f"{f.name}: falta la cabecera entre --- y ---")
+        meta = dict((k.strip().lower(), v.strip()) for k, v in (l.split(":", 1) for l in m.group(1).splitlines() if ":" in l))
+        d = SALIDA / f.stem
+        d.mkdir()
+        cuerpo = f"""<main class="entrada"><article class="columna">
+  <h1>{e(meta.get('titulo', f.stem))}</h1>
+  {f'<p class="bajada">{e(meta["bajada"])}</p>' if meta.get('bajada') else ''}
+  <div class="cuerpo">{markdown.markdown(m.group(2), extensions=["extra", "smarty"])}</div>
+  <a class="volver" href="../">← Inicio</a>
+</article></main>"""
+        (d / "index.html").write_text(
+            pagina(f"{meta.get('titulo', f.stem)} · juanchica", meta.get("bajada", ""), cuerpo, "../assets/estilos.css", "../"),
+            encoding="utf-8")
+        paginas += 1
+
+    print(f"Listo: portada + blog con {len(entradas)} entrada(s) publicadas y {paginas} página(s) en docs/")
 
 
 if __name__ == "__main__":
