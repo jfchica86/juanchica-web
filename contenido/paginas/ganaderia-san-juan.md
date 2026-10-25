@@ -13,3 +13,14 @@ No tenemos todas las respuestas. Estamos aprendiendo, cuestionando prácticas tr
 Ganadería San Juan es nuestro intento de demostrar que el campo no tiene que escoger entre productividad y naturaleza, entre tradición e innovación, ni entre rentabilidad y propósito.
 
 Es también una invitación a imaginar una nueva generación de empresas rurales.
+
+## San Juan de Frías y San Juan de Potosí
+
+<div class="galeria galeria-fincas">
+<figure><img src="../assets/img/fincas/finca-1.jpg" alt="Juan Francisco Chica y sus hermanos a caballo en la finca"></figure>
+<figure><img src="../assets/img/fincas/finca-2.jpg" alt="Recorriendo un potrero a caballo"></figure>
+<figure><img src="../assets/img/fincas/finca-3.jpg" alt="Potrero en ladera junto al bosque"></figure>
+<figure><img src="../assets/img/fincas/finca-4.jpg" alt="Cruzando la quebrada a caballo"></figure>
+<figure><img src="../assets/img/fincas/finca-5.jpg" alt="La quebrada entre el bosque"></figure>
+<figure><img src="../assets/img/fincas/finca-6.jpg" alt="Llegando a la quebrada a caballo"></figure>
+</div>

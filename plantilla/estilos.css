@@ -119,3 +119,6 @@ a:hover { text-decoration-color: var(--tinta); }
   .cuerpo p, .cuerpo li { font-size: 16px; }
   .cuerpo img.retrato { float: none; display: block; width: 200px; margin: 0 0 24px; }
 }
+
+.galeria-fincas { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.galeria-fincas img { aspect-ratio: 3 / 4; }
