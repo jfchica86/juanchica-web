@@ -87,6 +87,7 @@ def pagina(titulo: str, descripcion: str, cuerpo: str, ruta_css: str, raiz: str)
 <header class="cabecera"><div class="contenedor">
   <a class="marca" href="{raiz}" aria-label="Inicio">{ISOTIPO}<span>juanchica</span></a>
   <nav class="nav">
+    <a class="texto" href="{raiz}sobre-mi/">Sobre mí</a>
     <a class="texto" href="{raiz}blog/">Blog</a>
     <a class="boton" href="{e(SITIO['apps_url'])}">Entrar</a>
   </nav>
@@ -120,6 +121,9 @@ def construir():
         shutil.rmtree(SALIDA)
     (SALIDA / "assets").mkdir(parents=True)
     shutil.copy(PLANTILLA / "estilos.css", SALIDA / "assets" / "estilos.css")
+    # Fotos: contenido/imagenes/x.jpg → /assets/img/x.jpg
+    if (RAIZ / "contenido" / "imagenes").exists():
+        shutil.copytree(RAIZ / "contenido" / "imagenes", SALIDA / "assets" / "img")
     (SALIDA / "assets" / "favicon.svg").write_text(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1B1A17"/>'
         + ISOTIPO.replace("<svg ", "<svg x='15' y='14' width='34' height='36' style='color:#F2EEE6' ", 1) + "</svg>",
