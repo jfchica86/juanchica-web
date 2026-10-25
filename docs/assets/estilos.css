@@ -52,17 +52,17 @@ a:hover { text-decoration-color: var(--tinta); }
 .nav a.boton:hover { background: #2c2a25; color: var(--crudo); }
 
 /* Portada */
-.inicio { padding: 48px 0 24px; border-bottom: 1px solid var(--linea); }
-.intro { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--piedra); margin: 0 0 28px; }
+.inicio { padding: 48px 0 8px; border-bottom: 1px solid var(--linea); }
+.intro { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--piedra); margin: 0 0 48px; }
 .rotulo { font-size: 14px; color: var(--piedra); margin: 0 0 6px; }
-.enlaces { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px 24px; margin-bottom: 28px; }
+.enlaces { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 24px; margin-bottom: 56px; }
 .enlaces a { font-weight: 500; text-decoration: none; }
 .enlaces a:hover { text-decoration: underline; text-decoration-color: var(--tierra); }
 
 .corriente { padding: 32px 0 72px; }
 .corriente > .rotulo { margin: 0; }
 /* Títulos de sección de la portada: Proyectos, Encuéntrame, Blog */
-.inicio .rotulo, .corriente > .rotulo { font-size: 22px; font-weight: 600; color: var(--tinta); letter-spacing: -0.01em; margin-bottom: 12px; }
+.inicio .rotulo, .corriente > .rotulo { font-size: 22px; font-weight: 600; color: var(--tinta); letter-spacing: -0.01em; margin-bottom: 18px; }
 .inicio .rotulo:not(:first-of-type) { margin-top: 8px; }
 .corriente > .rotulo + .resumen { padding-top: 12px; }
 .resumen { padding: 36px 0 0; }
