@@ -33,7 +33,12 @@ a { color: inherit; text-decoration-color: var(--tierra); text-underline-offset:
 a:hover { text-decoration-color: var(--tinta); }
 
 /* El marco da el ancho de la página; el texto ocupa todo el marco, de lado a lado */
-.marco { margin: 0; padding: 0 clamp(24px, 5vw, 96px); }
+.marco { margin: 0; padding: 0 clamp(24px, 4vw, 64px); }
+/* En pantalla grande, como nav.al: la marca sola en la columna izquierda y el contenido
+   desde ahí hasta el borde derecho */
+@media (min-width: 1024px) {
+  main.marco, .pie .marco { padding-left: max(300px, 23vw); }
+}
 
 /* Cabecera */
 .cabecera .marco { display: flex; align-items: center; justify-content: space-between; height: 76px; }
@@ -82,7 +87,7 @@ a:hover { text-decoration-color: var(--tinta); }
 .cuerpo p, .cuerpo li { font-size: 17px; font-weight: 300; line-height: 1.8; }
 .cuerpo strong { font-weight: 500; }
 .cuerpo blockquote { margin: 32px 0; padding: 4px 0 4px 20px; border-left: 2px solid var(--tierra); color: var(--piedra); font-size: 18px; }
-.cuerpo img { max-width: 100%; border-radius: 8px; }
+.cuerpo img { max-width: min(100%, 720px); border-radius: 8px; }
 .cuerpo img.retrato { float: right; width: 200px; margin: 4px 0 16px 28px; }
 .cuerpo hr { border: 0; height: 1px; background: var(--linea); margin: 48px 0; }
 .cuerpo code { background: var(--blanco); padding: 2px 6px; border-radius: 6px; font-size: 0.9em; }

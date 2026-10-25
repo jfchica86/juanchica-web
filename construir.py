@@ -60,7 +60,7 @@ def leer_entradas():
         for linea in m.group(1).splitlines():
             if ":" in linea:
                 k, v = linea.split(":", 1)
-                meta[k.strip().lower()] = v.strip()
+                meta[k.strip().lower()] = html.unescape(v.strip())
         if meta.get("publicada", "").lower() not in ("si", "sí", "true"):
             continue
         for campo in ("titulo", "fecha"):
