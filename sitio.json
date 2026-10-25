@@ -20,5 +20,22 @@
   ],
   "dominio_activo": true,
   "bio_temas": "Aquí escribo sobre biotecnología, nutrición, innovación, mindset, campo y ganadería.",
-  "bio_detalle": "Promotor de la libertad, creador de valor por oficio, inquieto por naturaleza y aprendiz de por vida."
+  "bio_detalle": "Promotor de la libertad, creador de valor por oficio, inquieto por naturaleza y aprendiz de por vida.",
+  "en": {
+    "bio": "Entrepreneur, rancher and father.",
+    "bio_detalle": "Advocate for freedom, value creator by trade, restless by nature and a lifelong learner.",
+    "bio_temas": "Here I write about biotechnology, nutrition, innovation, mindset, the land and cattle ranching.",
+    "proyectos": [
+      {
+        "nombre": "Ganadería San Juan",
+        "texto": "Rethinking the land from first principles. A family cattle company we are building in Colombia.",
+        "url": "ganaderia-san-juan/"
+      },
+      {
+        "nombre": "Yuwú",
+        "texto": "Some places are most valuable for what we choose to preserve. 218 hectares of tropical forest that are part of our family's history.",
+        "url": "yuwu/"
+      }
+    ]
+  }
 }
