@@ -30,7 +30,7 @@ Aquí escribe cada semana sobre algo que vivió y lo que aprendió: el campo, la
 - Egresado Ejemplar, Universidad CES, 2019. [Ver →](https://www.ces.edu.co/informacion-para/informacion-para-egresados/egresados-ejemplares/ganadores-egresados-ejemplares-2019/)
 - Livestock Philippines Expo, Manila, 2015
 
-## Por donde ha trabajado
+## Un poco de mi experiencia
 
 <div class="galeria">
 <figure><img src="../assets/img/paises/china.jpg" alt="China"><figcaption>China</figcaption></figure>
