@@ -37,10 +37,10 @@ FUENTES = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
            '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
            '<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">')
 
-REDES = [("LinkedIn", "https://www.linkedin.com/in/jfchica/"),
-         ("Substack", "https://juanfranciscochica.substack.com"),
-         ("X", "https://x.com/JFChica"),
-         ("Instagram", "https://www.instagram.com/jfchica/")]
+REDES = [("LinkedIn", "https://www.linkedin.com/in/jfchica/", "in/jfchica"),
+         ("Substack", "https://juanfranciscochica.substack.com", "juanfranciscochica"),
+         ("X", "https://x.com/JFChica", "@JFChica"),
+         ("Instagram", "https://www.instagram.com/jfchica/", "@jfchica")]
 
 e = html.escape
 
@@ -103,7 +103,7 @@ def pagina(titulo: str, descripcion: str, cuerpo: str, ruta_css: str, raiz: str)
 {cuerpo}
 <footer class="pie"><div class="marco">
   <span>juanchica.com</span>
-  <nav class="redes">{"".join(f'<a href="{u}">{n}</a>' for n, u in REDES)}</nav>
+  <nav class="redes">{"".join(f'<a href="{u}">{n}</a>' for n, u, _ in REDES)}</nav>
 </div></footer>
 </body>
 </html>
@@ -161,15 +161,23 @@ def construir():
     (SALIDA / ".nojekyll").write_text("", encoding="utf-8")
 
     # Portada: presentación corta, enlaces y la corriente de entradas
-    proyectos = "".join(f'<a href="{e(p["url"])}">{e(p["nombre"])}</a>' for p in SITIO["proyectos"])
-    redes = "".join(f'<a href="{u}">{n}</a>' for n, u in REDES)
+    proyectos = "".join(
+        f'<article class="resumen"><h2><a href="{e(p["url"])}">{e(p["nombre"])}</a></h2>'
+        f'<p class="extracto">{e(p["texto"])} <a class="mas" href="{e(p["url"])}">Conocer ›</a></p></article>'
+        for p in SITIO["proyectos"]
+    )
+    redes = "".join(
+        f'<article class="resumen"><h2><a href="{u}">{n}</a></h2>'
+        f'<p class="extracto"><a class="cuenta" href="{u}">{e(c)}</a></p></article>'
+        for n, u, c in REDES
+    )
     portada = f"""<main class="marco">
 <section class="inicio">
   <p class="intro">{e(SITIO['bio'])}</p>
   <p class="rotulo">Proyectos</p>
-  <div class="enlaces">{proyectos}<a href="sobre-mi/">Sobre mí</a></div>
+  <div class="tarjetas dos">{proyectos}</div>
   <p class="rotulo">Encuéntrame</p>
-  <div class="enlaces">{redes}</div>
+  <div class="tarjetas cuatro">{redes}</div>
 </section>
 <section class="corriente"><p class="rotulo">Blog</p>{resumenes(entradas, '')}</section>
 </main>"""
