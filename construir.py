@@ -34,6 +34,11 @@ FUENTES = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
            '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
            '<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">')
 
+REDES = [("LinkedIn", "https://www.linkedin.com/in/jfchica/"),
+         ("Substack", "https://juanfranciscochica.substack.com"),
+         ("X", "https://x.com/JFChica"),
+         ("Instagram", "https://www.instagram.com/jfchica/")]
+
 e = html.escape
 
 
@@ -84,40 +89,53 @@ def pagina(titulo: str, descripcion: str, cuerpo: str, ruta_css: str, raiz: str)
 <link rel="stylesheet" href="{ruta_css}">
 </head>
 <body>
-<header class="cabecera"><div class="contenedor">
+<header class="cabecera"><div class="marco">
   <a class="marca" href="{raiz}" aria-label="Inicio">{ISOTIPO}<span>juanchica</span></a>
   <nav class="nav">
-    <a class="texto" href="{raiz}sobre-mi/">Sobre mí</a>
-    <a class="texto" href="{raiz}blog/">Blog</a>
-    <a class="boton" href="{e(SITIO['apps_url'])}">Entrar</a>
+    <a href="{raiz}sobre-mi/">Sobre mí</a>
+    <a href="{raiz}blog/">Archivo</a>
+    <a href="{e(SITIO['apps_url'])}">Entrar</a>
   </nav>
 </div></header>
 {cuerpo}
-<footer class="pie"><div class="contenedor">
-  <a class="marca" href="{raiz}">{ISOTIPO}<span>juanchica<span class="dom">.com</span></span></a>
-  <nav class="redes">
-    <a href="https://www.linkedin.com/in/jfchica/">LinkedIn</a>
-    <a href="https://juanfranciscochica.substack.com">Substack</a>
-    <a href="https://x.com/JFChica">X</a>
-    <a href="https://www.instagram.com/jfchica/">Instagram</a>
-  </nav>
-  <a class="boton" href="{e(SITIO['apps_url'])}">Entrar a las apps</a>
+<footer class="pie"><div class="marco">
+  <span>juanchica.com</span>
+  <nav class="redes">{"".join(f'<a href="{u}">{n}</a>' for n, u in REDES)}</nav>
 </div></footer>
 </body>
 </html>
 """
 
 
-def lista(entradas, limite=None):
+def extracto(x, palabras=45) -> str:
+    texto = html.unescape(re.sub(r"<[^>]+>", " ", x["html"])).split()
+    return " ".join(texto[:palabras]) + ("…" if len(texto) > palabras else "")
+
+
+def resumenes(entradas, raiz: str) -> str:
     if not entradas:
         return '<p class="vacio">Las primeras entradas están en camino.</p>'
-    items = []
-    for x in entradas[:limite]:
-        items.append(
-            f'<li><a href="{{raiz}}blog/{x["slug"]}/"><span class="fecha">{fecha_larga(x["fecha"])}</span>'
-            f'<h3>{e(x["titulo"])}</h3>' + (f'<p>{e(x["bajada"])}</p>' if x["bajada"] else "") + "</a></li>"
-        )
-    return '<ul class="lista-entradas">' + "".join(items) + "</ul>"
+    return "".join(
+        f'<article class="resumen"><h2><a href="{raiz}blog/{x["slug"]}/">{e(x["titulo"])}</a></h2>'
+        + (f'<p class="bajada">{e(x["bajada"])}</p>' if x["bajada"] else "")
+        + f'<p class="extracto">{e(extracto(x))} <a class="mas" href="{raiz}blog/{x["slug"]}/">Leer más ›</a></p>'
+        + f'<p class="fecha">{fecha_larga(x["fecha"])}</p></article>'
+        for x in entradas
+    )
+
+
+def archivo(entradas, raiz: str) -> str:
+    if not entradas:
+        return '<p class="vacio">Las primeras entradas están en camino.</p>'
+    bloques, anio = [], None
+    for x in entradas:
+        if x["fecha"].year != anio:
+            if anio is not None:
+                bloques.append("</ul>")
+            anio = x["fecha"].year
+            bloques.append(f'<p class="rotulo">{anio}</p><ul class="archivo">')
+        bloques.append(f'<li><a href="{raiz}blog/{x["slug"]}/">{e(x["titulo"])}</a></li>')
+    return "".join(bloques) + "</ul>"
 
 
 def construir():
@@ -139,53 +157,40 @@ def construir():
         (SALIDA / "CNAME").write_text(SITIO["dominio"] + "\n", encoding="utf-8")
     (SALIDA / ".nojekyll").write_text("", encoding="utf-8")
 
-    # Portada
-    proyectos = "".join(
-        (f'<a class="proyecto" href="{e(p["url"])}">' if p.get("url") else '<div class="proyecto">')
-        + f'<h3>{e(p["nombre"])}</h3><p>{e(p["texto"])}</p>'
-        + (f'<span class="ir">{e(p["enlace"])} →</span>' if p.get("url") and p.get("enlace") else "")
-        + ("</a>" if p.get("url") else "</div>")
-        for p in SITIO["proyectos"]
-    )
-    portada = f"""<main>
-<section class="hero"><div class="columna">
-  {ISOTIPO}
-  <h1>juanchica<span class="dom">.com</span></h1>
-  <hr class="regla">
-  <p class="temas">{e(SITIO['temas'])}</p>
-  <p class="bio">{e(SITIO['bio'])}</p>
-</div></section>
-<section class="seccion"><div class="contenedor">
-  <p class="etiqueta">En qué estoy</p>
-  <div class="proyectos">{proyectos}</div>
-</div></section>
-<section class="seccion"><div class="columna">
-  <p class="etiqueta">Blog</p>
-  {lista(entradas, 5).replace('{raiz}', '')}
-  {'<a class="volver" href="blog/">Ver todas las entradas →</a>' if len(entradas) > 5 else ''}
-</div></section>
+    # Portada: presentación corta, enlaces y la corriente de entradas
+    proyectos = "".join(f'<a href="{e(p["url"])}">{e(p["nombre"])}</a>' for p in SITIO["proyectos"])
+    redes = "".join(f'<a href="{u}">{n}</a>' for n, u in REDES)
+    portada = f"""<main class="marco">
+<section class="inicio">
+  <p class="intro">{e(SITIO['bio'])}</p>
+  <p class="rotulo">Proyectos</p>
+  <div class="enlaces">{proyectos}<a href="sobre-mi/">Sobre mí</a></div>
+  <p class="rotulo">Encuéntrame</p>
+  <div class="enlaces">{redes}</div>
+</section>
+<section class="corriente">{resumenes(entradas, '')}</section>
 </main>"""
     (SALIDA / "index.html").write_text(
         pagina("juanchica", SITIO["bio"], portada, "assets/estilos.css", ""), encoding="utf-8")
 
-    # Blog
+    # Archivo: todos los títulos, por año
     (SALIDA / "blog").mkdir()
-    indice = f"""<main class="entrada"><div class="columna">
-  <p class="etiqueta">Blog</p>
-  {lista(entradas).replace('{raiz}', '../')}
-</div></main>"""
+    indice = f"""<main class="marco entrada">
+  <h1>Archivo</h1>
+  {archivo(entradas, '../')}
+</main>"""
     (SALIDA / "blog" / "index.html").write_text(
-        pagina("Blog · juanchica", "Entradas de juanchica.com", indice, "../assets/estilos.css", "../"), encoding="utf-8")
+        pagina("Archivo · juanchica", "Todas las entradas de juanchica.com", indice, "../assets/estilos.css", "../"), encoding="utf-8")
 
     for x in entradas:
         d = SALIDA / "blog" / x["slug"]
         d.mkdir()
-        cuerpo = f"""<main class="entrada"><article class="columna">
+        cuerpo = f"""<main class="marco entrada"><article>
   <p class="meta">{fecha_larga(x['fecha'])}</p>
   <h1>{e(x['titulo'])}</h1>
   {f'<p class="bajada">{e(x["bajada"])}</p>' if x['bajada'] else ''}
   <div class="cuerpo">{x['html']}</div>
-  <a class="volver" href="../">← Todas las entradas</a>
+  <a class="volver" href="../">← Archivo</a>
 </article></main>"""
         (d / "index.html").write_text(
             pagina(f"{x['titulo']} · juanchica", x["bajada"] or x["titulo"], cuerpo, "../../assets/estilos.css", "../../"),
@@ -200,7 +205,7 @@ def construir():
         meta = dict((k.strip().lower(), v.strip()) for k, v in (l.split(":", 1) for l in m.group(1).splitlines() if ":" in l))
         d = SALIDA / f.stem
         d.mkdir()
-        cuerpo = f"""<main class="entrada"><article class="columna">
+        cuerpo = f"""<main class="marco entrada"><article>
   <h1>{e(meta.get('titulo', f.stem))}</h1>
   {f'<p class="bajada">{e(meta["bajada"])}</p>' if meta.get('bajada') else ''}
   <div class="cuerpo">{markdown.markdown(m.group(2), extensions=["extra", "smarty"])}</div>

@@ -1,6 +1,7 @@
 /* juanchica.com — marca personal (guía de identidad 2026)
    Tinta #1B1A17 · Piedra #6E685D · Tierra #C9BBA6 · Crudo #F2EEE6 · Blanco #FFFFFF
-   Hanken Grotesk: 600 títulos · 500 subtítulos · 400 texto · 300 notas */
+   Hanken Grotesk: 600 títulos · 500 subtítulos · 400 texto · 300 notas
+   Estructura: una sola columna de lectura, texto primero (a la manera de nav.al). */
 
 :root {
   --tinta: #1b1a17;
@@ -9,8 +10,8 @@
   --crudo: #f2eee6;
   --blanco: #ffffff;
   --linea: #e2dbcf;
-  --ancho: 720px;
-  --ancho-amplio: 1040px;
+  --marco: 1040px;
+  --lectura: 640px;
 }
 
 * { box-sizing: border-box; }
@@ -22,103 +23,91 @@ body {
   background: var(--crudo);
   color: var(--tinta);
   font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.65;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
 a { color: inherit; text-decoration-color: var(--tierra); text-underline-offset: 3px; }
 a:hover { text-decoration-color: var(--tinta); }
 
-.contenedor { max-width: var(--ancho-amplio); margin: 0 auto; padding: 0 24px; }
-.columna { max-width: var(--ancho); margin: 0 auto; padding: 0 24px; }
+/* El marco da el ancho de la página; todo lo que se lee queda en una columna angosta, a la izquierda */
+.marco { max-width: var(--marco); margin: 0 auto; padding: 0 24px; }
+main.marco > *, .entrada article > * { max-width: var(--lectura); }
 
 /* Cabecera */
-.cabecera { border-bottom: 1px solid var(--linea); }
-.cabecera .contenedor { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.marca { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
-.marca svg { width: 22px; height: 22px; color: var(--tinta); }
-.marca span { font-weight: 600; font-size: 19px; letter-spacing: -0.01em; }
-.nav { display: flex; align-items: center; gap: 24px; font-size: 15px; }
-.nav a { text-decoration: none; color: var(--piedra); }
+.cabecera .marco { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+.marca { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.marca svg { width: 18px; height: 18px; color: var(--tinta); }
+.marca span { font-weight: 600; font-size: 18px; letter-spacing: -0.01em; }
+.nav { display: flex; align-items: center; gap: 22px; font-size: 15px; }
+.nav a { text-decoration: none; color: var(--piedra); font-weight: 400; }
 .nav a:hover { color: var(--tinta); }
-.boton {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--tinta); color: var(--crudo) !important;
-  padding: 8px 16px; border-radius: 999px; font-weight: 500; font-size: 14px; text-decoration: none;
-}
-.boton:hover { background: #2c2a25; }
 
 /* Portada */
-.hero { padding: 104px 0 80px; text-align: center; }
-.hero svg { width: 64px; height: 64px; color: var(--tinta); }
-.hero h1 { font-size: 48px; line-height: 1.1; font-weight: 500; letter-spacing: -0.02em; margin: 28px 0 0; }
-.hero h1 .dom { color: var(--tierra); }
-.hero .regla { width: 64px; height: 1px; background: var(--tierra); margin: 24px auto; border: 0; }
-.hero .temas { color: var(--piedra); font-size: 13px; font-weight: 400; letter-spacing: 0.08em; margin: 0; }
-.hero .bio { max-width: 520px; margin: 32px auto 0; font-size: 17px; font-weight: 300; color: var(--tinta); }
+.inicio { padding: 48px 0 24px; border-bottom: 1px solid var(--linea); }
+.intro { font-size: 19px; font-weight: 300; line-height: 1.6; margin: 0 0 36px; }
+.rotulo { font-size: 14px; color: var(--piedra); margin: 0 0 6px; }
+.enlaces { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 24px; margin-bottom: 28px; }
+.enlaces a { font-weight: 500; text-decoration: none; }
+.enlaces a:hover { text-decoration: underline; text-decoration-color: var(--tierra); }
 
-.seccion { padding: 64px 0; border-top: 1px solid var(--linea); }
-.etiqueta { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--piedra); font-weight: 500; margin: 0 0 24px; }
-
-.proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-.proyecto { background: var(--blanco); border-radius: 14px; padding: 28px; text-decoration: none; display: block; }
-.proyecto h3 { margin: 0 0 8px; font-size: 18px; font-weight: 500; }
-.proyecto p { margin: 0; color: var(--piedra); font-size: 15px; font-weight: 300; }
-.proyecto .ir { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 500; }
-
-.lista-entradas { list-style: none; margin: 0; padding: 0; }
-.lista-entradas li { border-top: 1px solid var(--linea); }
-.lista-entradas li:first-child { border-top: 0; }
-.lista-entradas a { display: block; padding: 22px 0; text-decoration: none; }
-.lista-entradas h3 { margin: 0; font-size: 19px; font-weight: 500; line-height: 1.35; }
-.lista-entradas p { margin: 6px 0 0; color: var(--piedra); font-size: 15px; font-weight: 300; }
-.lista-entradas .fecha { font-size: 14px; color: var(--piedra); font-weight: 300; }
+.corriente { padding: 16px 0 72px; }
+.resumen { padding: 36px 0 0; }
+.resumen h2 { font-size: 19px; font-weight: 600; line-height: 1.35; margin: 0 0 6px; }
+.resumen h2 a { text-decoration: none; }
+.resumen h2 a:hover { text-decoration: underline; text-decoration-color: var(--tierra); }
+.resumen .bajada { margin: 0 0 8px; font-size: 16px; font-weight: 400; }
+.resumen .extracto { margin: 0 0 8px; color: var(--piedra); font-size: 16px; font-weight: 300; line-height: 1.75; }
+.resumen .mas { color: var(--tinta); font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap; }
+.resumen .fecha { margin: 0; font-size: 14px; color: var(--piedra); }
 .vacio { color: var(--piedra); font-style: italic; }
 
-/* Entrada */
-.entrada { padding: 72px 0 96px; }
-.entrada .meta { color: var(--piedra); font-size: 15px; font-weight: 300; margin: 0 0 12px; }
-.entrada h1 { font-size: 36px; line-height: 1.2; font-weight: 500; letter-spacing: -0.015em; margin: 0 0 24px; }
-.entrada .bajada { font-size: 18px; font-weight: 300; color: var(--piedra); margin: 0 0 40px; }
-.cuerpo h2 { font-size: 24px; font-weight: 500; line-height: 1.25; margin: 48px 0 12px; }
-.cuerpo h3 { font-size: 19px; font-weight: 500; margin: 36px 0 8px; }
-.cuerpo p, .cuerpo li { font-size: 17px; line-height: 1.75; }
-.cuerpo blockquote { margin: 32px 0; padding: 4px 0 4px 20px; border-left: 2px solid var(--tierra); color: var(--piedra); font-size: 18px; font-weight: 300; }
-.cuerpo img { max-width: 100%; border-radius: 10px; }
-.cuerpo img.retrato { float: right; width: 220px; margin: 4px 0 16px 28px; }
-.galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; margin: 24px 0; }
-.galeria figure { margin: 0; }
-.galeria img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
-.galeria figcaption { font-size: 14px; color: var(--piedra); margin-top: 6px; }
+/* Archivo */
+.archivo { list-style: none; margin: 0 0 36px; padding: 0; }
+.archivo li { padding: 4px 0; }
+.archivo a { font-weight: 500; text-decoration: none; }
+.archivo a:hover { text-decoration: underline; text-decoration-color: var(--tierra); }
+.entrada > .rotulo { margin-top: 8px; }
+
+/* Entrada y páginas */
+.entrada { padding: 48px 24px 96px; }
+.entrada h1 { font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 16px; }
+.entrada .meta { color: var(--piedra); font-size: 15px; margin: 0 0 10px; }
+.entrada .bajada { font-size: 18px; color: var(--piedra); margin: 0 0 36px; }
+.cuerpo h2 { font-size: 21px; font-weight: 600; line-height: 1.3; margin: 44px 0 12px; }
+.cuerpo h3 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; }
+.cuerpo p, .cuerpo li { font-size: 17px; font-weight: 300; line-height: 1.8; }
+.cuerpo strong { font-weight: 500; }
+.cuerpo blockquote { margin: 32px 0; padding: 4px 0 4px 20px; border-left: 2px solid var(--tierra); color: var(--piedra); font-size: 18px; }
+.cuerpo img { max-width: 100%; border-radius: 8px; }
+.cuerpo img.retrato { float: right; width: 200px; margin: 4px 0 16px 28px; }
 .cuerpo hr { border: 0; height: 1px; background: var(--linea); margin: 48px 0; }
 .cuerpo code { background: var(--blanco); padding: 2px 6px; border-radius: 6px; font-size: 0.9em; }
 .cuerpo table { border-collapse: collapse; width: 100%; font-size: 16px; }
 .cuerpo th, .cuerpo td { border-bottom: 1px solid var(--linea); padding: 8px; text-align: left; }
-.volver { display: inline-block; margin-top: 56px; font-size: 16px; color: var(--piedra); }
+.volver { display: inline-block; margin-top: 56px; font-size: 15px; color: var(--piedra); }
+
+.galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; margin: 24px 0; }
+.galeria figure { margin: 0; }
+.galeria img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.galeria figcaption { font-size: 14px; color: var(--piedra); margin-top: 6px; }
+.galeria-fincas { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.galeria-fincas img { aspect-ratio: 3 / 4; }
 
 /* Pie */
-.pie { background: var(--tinta); color: var(--crudo); padding: 56px 0; }
-.pie .contenedor { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
-.pie .marca svg { color: var(--crudo); }
-.pie .marca span .dom { color: var(--tierra); }
-.pie p { margin: 0; color: var(--tierra); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
-.pie .redes { display: flex; flex-wrap: wrap; gap: 20px; font-size: 14px; }
-.pie .redes a { color: var(--tierra); text-decoration: none; }
-.pie .redes a:hover { color: var(--crudo); }
-.pie a.boton { background: var(--crudo); color: var(--tinta) !important; }
+.pie { border-top: 1px solid var(--linea); padding: 28px 0 40px; font-size: 14px; color: var(--piedra); }
+.pie .marco { display: flex; flex-wrap: wrap; gap: 16px 24px; justify-content: space-between; }
+.pie .redes { display: flex; flex-wrap: wrap; gap: 20px; }
+.pie .redes a { text-decoration: none; }
+.pie .redes a:hover { color: var(--tinta); }
 
 @media (max-width: 640px) {
-  body { font-size: 16px; }
-  .nav a.texto { display: none; }
-  .hero { padding: 64px 0 48px; }
-  .hero h1 { font-size: 38px; }
-  .hero .bio { font-size: 16px; }
-  .entrada h1 { font-size: 28px; }
+  .nav { gap: 16px; }
+  .inicio { padding-top: 32px; }
+  .intro { font-size: 18px; }
+  .entrada h1 { font-size: 27px; }
   .cuerpo p, .cuerpo li { font-size: 16px; }
   .cuerpo img.retrato { float: none; display: block; width: 200px; margin: 0 0 24px; }
 }
-
-.galeria-fincas { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-.galeria-fincas img { aspect-ratio: 3 / 4; }
