@@ -53,20 +53,21 @@ a:hover { text-decoration-color: var(--tinta); }
 
 /* Portada */
 .inicio { padding: 48px 0 8px; border-bottom: 1px solid var(--linea); }
-.intro { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--piedra); margin: 0 0 48px; }
+.intro { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--piedra); margin: 0 0 40px; }
 .rotulo { font-size: 14px; color: var(--piedra); margin: 0 0 6px; }
-.tarjetas { display: grid; gap: 8px 48px; margin-bottom: 48px; }
+.tarjetas { display: grid; gap: 8px 48px; margin-bottom: 40px; }
 .tarjetas.dos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .tarjetas.cuatro { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .tarjetas .resumen { padding: 0; }
 .tarjetas .cuenta { color: var(--piedra); text-decoration: none; overflow-wrap: anywhere; }
 .tarjetas .cuenta:hover { color: var(--tinta); }
 
-.corriente { padding: 32px 0 72px; }
+.corriente { padding: 40px 0 72px; }
 .corriente > .rotulo { margin: 0; }
 /* Títulos de sección de la portada: Proyectos, Encuéntrame, Blog */
 .inicio .rotulo, .corriente > .rotulo { font-size: 22px; font-weight: 600; color: var(--tinta); letter-spacing: -0.01em; margin-bottom: 18px; }
-.inicio .rotulo:not(:first-of-type) { margin-top: 8px; }
+/* Una raya delgada separa cada bloque, igual que la que va antes de Blog */
+.inicio .rotulo { border-top: 1px solid var(--linea); padding-top: 40px; }
 .corriente > .rotulo + .resumen { padding-top: 12px; }
 .resumen { padding: 36px 0 0; }
 .resumen h2 { font-size: 19px; font-weight: 600; line-height: 1.35; margin: 0 0 6px; }
