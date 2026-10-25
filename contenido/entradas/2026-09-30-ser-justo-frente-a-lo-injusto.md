@@ -1,7 +1,7 @@
 ---
 titulo: Ser justo frente a lo injusto
 fecha: 2026-09-30
-bajada: Una reflexi&#243;n sobre la justicia cuando el mundo no se comporta justamente
+bajada: Una reflexión sobre la justicia cuando el mundo no se comporta justamente
 publicada: si
 original: https://juanfranciscochica.substack.com/p/ser-justo-frente-a-lo-injusto
 ---

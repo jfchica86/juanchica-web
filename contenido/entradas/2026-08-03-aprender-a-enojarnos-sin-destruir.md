@@ -1,7 +1,7 @@
 ---
 titulo: Aprender a enojarnos sin destruir lo que amamos
 fecha: 2026-08-03
-bajada: Una reflexi&#243;n sobre c&#243;mo atravesar conflictos con responsabilidad, y voluntad de tejer.
+bajada: Una reflexión sobre cómo atravesar conflictos con responsabilidad, y voluntad de tejer.
 publicada: si
 original: https://juanfranciscochica.substack.com/p/aprender-a-enojarnos-sin-destruir
 ---

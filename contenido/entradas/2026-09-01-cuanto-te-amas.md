@@ -1,7 +1,7 @@
 ---
 titulo: ¿Cuánto te amas?
 fecha: 2026-09-01
-bajada: Cuando me hicieron esta pregunta, de entrada, me pareci&#243; casi obvia: &#191;cu&#225;nto te amas?
+bajada: Cuando me hicieron esta pregunta, de entrada, me pareció casi obvia: ¿cuánto te amas?
 publicada: si
 original: https://juanfranciscochica.substack.com/p/cuanto-te-amas
 ---
