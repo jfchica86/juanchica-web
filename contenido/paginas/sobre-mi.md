@@ -21,13 +21,14 @@ Aquí escribe cada semana sobre algo que vivió y lo que aprendió: el campo, la
 - MBA, Universidad de Pekín (BiMBA, Escuela Nacional de Desarrollo), China
 - MBA, Vlerick Business School, Bélgica
 - Médico Veterinario y Zootecnista, Universidad CES, Medellín
-- Alumni, Singularity University Ventures, Estados Unidos, 2018
+- Alumni, Singularity University Ventures, San Francisco, 2018, incubando Mivita
 - Agribusiness Seminar, Harvard Business School, 2025
 
 ## Reconocimientos y charlas
 
 - Foro Internacional ASOCEBU 360°, Feria Nacional Cebú, Montería, 2026: *Microbioma y carbono: una nueva visión del suelo para la ganadería del futuro*. [Ver →](https://www.instagram.com/reel/DcRaNWapIoh/)
 - Egresado Ejemplar, Universidad CES, 2019. [Ver →](https://www.ces.edu.co/informacion-para/informacion-para-egresados/egresados-ejemplares/ganadores-egresados-ejemplares-2019/)
+- Presentación de Mivita en Singularity University Ventures, San Francisco, 2018
 - Livestock Philippines Expo, Manila, 2015
 
 ## Un poco de mi experiencia
@@ -43,7 +44,7 @@ Aquí escribe cada semana sobre algo que vivió y lo que aprendió: el campo, la
 <figure><img src="../assets/img/paises/turquia.jpg" alt="Turquía"><figcaption>Turquía</figcaption></figure>
 <figure><img src="../assets/img/paises/egipto.jpg" alt="Egipto"><figcaption>Egipto</figcaption></figure>
 <figure><img src="../assets/img/paises/estados-unidos.jpg" alt="Washington"><figcaption>Washington</figcaption></figure>
-<figure><img src="../assets/img/paises/singularity-sf.jpg" alt="Singularity University, San Francisco"><figcaption>Singularity University, San Francisco</figcaption></figure>
+<figure><img src="../assets/img/paises/singularity-sf.jpg" alt="Singularity University, San Francisco"><figcaption>Presentando Mivita en Singularity University, San Francisco</figcaption></figure>
 <figure><img src="../assets/img/paises/san-diego.jpg" alt="San Diego"><figcaption>San Diego</figcaption></figure>
 <figure><img src="../assets/img/paises/durham.jpg" alt="Durham, Carolina del Norte"><figcaption>Durham, Carolina del Norte</figcaption></figure>
 <figure><img src="../assets/img/paises/dubai.jpg" alt="Dubái"><figcaption>Dubái</figcaption></figure>
