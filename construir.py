@@ -94,7 +94,7 @@ def pagina(titulo: str, descripcion: str, cuerpo: str, ruta_css: str, raiz: str)
   <nav class="nav">
     <a href="{raiz}sobre-mi/">Sobre mí</a>
     <a href="{raiz}blog/">Archivo</a>
-    <a href="{e(SITIO['apps_url'])}">Entrar</a>
+    <a class="boton" href="{e(SITIO['apps_url'])}">Entrar</a>
   </nav>
 </div></header>
 {cuerpo}

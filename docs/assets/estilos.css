@@ -32,9 +32,8 @@ body {
 a { color: inherit; text-decoration-color: var(--tierra); text-underline-offset: 3px; }
 a:hover { text-decoration-color: var(--tinta); }
 
-/* El marco da el ancho de la página; todo lo que se lee queda en una columna angosta, a la izquierda */
+/* El marco da el ancho de la página; el texto ocupa todo el marco, de lado a lado */
 .marco { max-width: var(--marco); margin: 0 auto; padding: 0 24px; }
-main.marco > *, .entrada article > * { max-width: var(--lectura); }
 
 /* Cabecera */
 .cabecera .marco { display: flex; align-items: center; justify-content: space-between; height: 76px; }
@@ -44,12 +43,14 @@ main.marco > *, .entrada article > * { max-width: var(--lectura); }
 .nav { display: flex; align-items: center; gap: 22px; font-size: 15px; }
 .nav a { text-decoration: none; color: var(--piedra); font-weight: 400; }
 .nav a:hover { color: var(--tinta); }
+.nav a.boton { background: var(--tinta); color: var(--crudo); padding: 7px 16px; border-radius: 6px; font-weight: 500; }
+.nav a.boton:hover { background: #2c2a25; color: var(--crudo); }
 
 /* Portada */
 .inicio { padding: 48px 0 24px; border-bottom: 1px solid var(--linea); }
-.intro { font-size: 19px; font-weight: 300; line-height: 1.6; margin: 0 0 36px; }
+.intro { font-size: 17px; font-weight: 300; line-height: 1.8; margin: 0 0 32px; }
 .rotulo { font-size: 14px; color: var(--piedra); margin: 0 0 6px; }
-.enlaces { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 24px; margin-bottom: 28px; }
+.enlaces { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px 24px; margin-bottom: 28px; }
 .enlaces a { font-weight: 500; text-decoration: none; }
 .enlaces a:hover { text-decoration: underline; text-decoration-color: var(--tierra); }
 
@@ -104,9 +105,11 @@ main.marco > *, .entrada article > * { max-width: var(--lectura); }
 .pie .redes a:hover { color: var(--tinta); }
 
 @media (max-width: 640px) {
-  .nav { gap: 16px; }
+  .nav { gap: 14px; font-size: 14px; }
+  .nav a.boton { padding: 6px 12px; }
   .inicio { padding-top: 32px; }
-  .intro { font-size: 18px; }
+  .intro { font-size: 16px; }
+  .enlaces { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .entrada h1 { font-size: 27px; }
   .cuerpo p, .cuerpo li { font-size: 16px; }
   .cuerpo img.retrato { float: none; display: block; width: 200px; margin: 0 0 24px; }
