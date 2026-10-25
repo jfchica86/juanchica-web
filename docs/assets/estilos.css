@@ -33,7 +33,7 @@ a { color: inherit; text-decoration-color: var(--tierra); text-underline-offset:
 a:hover { text-decoration-color: var(--tinta); }
 
 /* El marco da el ancho de la página; el texto ocupa todo el marco, de lado a lado */
-.marco { max-width: var(--marco); margin: 0 auto; padding: 0 24px; }
+.marco { margin: 0; padding: 0 clamp(24px, 5vw, 96px); }
 
 /* Cabecera */
 .cabecera .marco { display: flex; align-items: center; justify-content: space-between; height: 76px; }
@@ -48,7 +48,7 @@ a:hover { text-decoration-color: var(--tinta); }
 
 /* Portada */
 .inicio { padding: 48px 0 24px; border-bottom: 1px solid var(--linea); }
-.intro { font-size: 17px; font-weight: 300; line-height: 1.8; margin: 0 0 32px; }
+.intro { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--piedra); margin: 0 0 28px; }
 .rotulo { font-size: 14px; color: var(--piedra); margin: 0 0 6px; }
 .enlaces { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px 24px; margin-bottom: 28px; }
 .enlaces a { font-weight: 500; text-decoration: none; }
@@ -73,7 +73,7 @@ a:hover { text-decoration-color: var(--tinta); }
 .entrada > .rotulo { margin-top: 8px; }
 
 /* Entrada y páginas */
-.entrada { padding: 48px 24px 96px; }
+.entrada { padding-top: 48px; padding-bottom: 96px; }
 .entrada h1 { font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 16px; }
 .entrada .meta { color: var(--piedra); font-size: 15px; margin: 0 0 10px; }
 .entrada .bajada { font-size: 18px; color: var(--piedra); margin: 0 0 36px; }
@@ -108,7 +108,7 @@ a:hover { text-decoration-color: var(--tinta); }
   .nav { gap: 14px; font-size: 14px; }
   .nav a.boton { padding: 6px 12px; }
   .inicio { padding-top: 32px; }
-  .intro { font-size: 16px; }
+  .intro { font-size: 15px; }
   .enlaces { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .entrada h1 { font-size: 27px; }
   .cuerpo p, .cuerpo li { font-size: 16px; }
