@@ -1,0 +1,111 @@
+/* juanchica.com — marca personal (guía de identidad 2026)
+   Tinta #1B1A17 · Piedra #6E685D · Tierra #C9BBA6 · Crudo #F2EEE6 · Blanco #FFFFFF
+   Hanken Grotesk: 600 títulos · 500 subtítulos · 400 texto · 300 notas */
+
+:root {
+  --tinta: #1b1a17;
+  --piedra: #6e685d;
+  --tierra: #c9bba6;
+  --crudo: #f2eee6;
+  --blanco: #ffffff;
+  --linea: #e2dbcf;
+  --ancho: 720px;
+  --ancho-amplio: 1040px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--crudo);
+  color: var(--tinta);
+  font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration-color: var(--tierra); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--tinta); }
+
+.contenedor { max-width: var(--ancho-amplio); margin: 0 auto; padding: 0 24px; }
+.columna { max-width: var(--ancho); margin: 0 auto; padding: 0 24px; }
+
+/* Cabecera */
+.cabecera { border-bottom: 1px solid var(--linea); }
+.cabecera .contenedor { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.marca { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+.marca svg { width: 26px; height: 26px; color: var(--tinta); }
+.marca span { font-weight: 600; font-size: 22px; letter-spacing: -0.01em; }
+.nav { display: flex; align-items: center; gap: 24px; font-size: 16px; }
+.nav a { text-decoration: none; color: var(--piedra); }
+.nav a:hover { color: var(--tinta); }
+.boton {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--tinta); color: var(--crudo) !important;
+  padding: 10px 18px; border-radius: 999px; font-weight: 500; text-decoration: none;
+}
+.boton:hover { background: #2c2a25; }
+
+/* Portada */
+.hero { padding: 96px 0 72px; text-align: center; }
+.hero svg { width: 88px; height: 88px; color: var(--tinta); }
+.hero h1 { font-size: 64px; line-height: 1.05; font-weight: 600; letter-spacing: -0.02em; margin: 28px 0 0; }
+.hero h1 .dom { color: var(--tierra); }
+.hero .regla { width: 64px; height: 1px; background: var(--tierra); margin: 24px auto; border: 0; }
+.hero .temas { color: var(--piedra); font-size: 16px; letter-spacing: 0.04em; margin: 0; }
+.hero .bio { max-width: 560px; margin: 32px auto 0; font-size: 20px; color: var(--tinta); }
+
+.seccion { padding: 64px 0; border-top: 1px solid var(--linea); }
+.etiqueta { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--piedra); font-weight: 500; margin: 0 0 24px; }
+
+.proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.proyecto { background: var(--blanco); border-radius: 14px; padding: 28px; text-decoration: none; display: block; }
+.proyecto h3 { margin: 0 0 8px; font-size: 22px; font-weight: 600; }
+.proyecto p { margin: 0; color: var(--piedra); font-size: 16px; }
+.proyecto .ir { display: inline-block; margin-top: 16px; font-size: 15px; font-weight: 500; }
+
+.lista-entradas { list-style: none; margin: 0; padding: 0; }
+.lista-entradas li { border-top: 1px solid var(--linea); }
+.lista-entradas li:first-child { border-top: 0; }
+.lista-entradas a { display: block; padding: 22px 0; text-decoration: none; }
+.lista-entradas h3 { margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3; }
+.lista-entradas p { margin: 6px 0 0; color: var(--piedra); font-size: 16px; }
+.lista-entradas .fecha { font-size: 14px; color: var(--piedra); font-weight: 300; }
+.vacio { color: var(--piedra); font-style: italic; }
+
+/* Entrada */
+.entrada { padding: 72px 0 96px; }
+.entrada .meta { color: var(--piedra); font-size: 15px; font-weight: 300; margin: 0 0 12px; }
+.entrada h1 { font-size: 44px; line-height: 1.15; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 24px; }
+.entrada .bajada { font-size: 21px; color: var(--piedra); margin: 0 0 40px; }
+.cuerpo h2 { font-size: 28px; font-weight: 600; line-height: 1.25; margin: 48px 0 12px; }
+.cuerpo h3 { font-size: 22px; font-weight: 500; margin: 36px 0 8px; }
+.cuerpo p, .cuerpo li { font-size: 19px; }
+.cuerpo blockquote { margin: 32px 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--tierra); color: var(--piedra); font-size: 21px; }
+.cuerpo img { max-width: 100%; border-radius: 10px; }
+.cuerpo hr { border: 0; height: 1px; background: var(--linea); margin: 48px 0; }
+.cuerpo code { background: var(--blanco); padding: 2px 6px; border-radius: 6px; font-size: 0.9em; }
+.cuerpo table { border-collapse: collapse; width: 100%; font-size: 16px; }
+.cuerpo th, .cuerpo td { border-bottom: 1px solid var(--linea); padding: 8px; text-align: left; }
+.volver { display: inline-block; margin-top: 56px; font-size: 16px; color: var(--piedra); }
+
+/* Pie */
+.pie { background: var(--tinta); color: var(--crudo); padding: 56px 0; }
+.pie .contenedor { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+.pie .marca svg { color: var(--crudo); }
+.pie .marca span .dom { color: var(--tierra); }
+.pie p { margin: 0; color: var(--tierra); font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; }
+.pie a.boton { background: var(--crudo); color: var(--tinta) !important; }
+
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  .nav a.texto { display: none; }
+  .hero { padding: 64px 0 48px; }
+  .hero h1 { font-size: 44px; }
+  .hero .bio { font-size: 18px; }
+  .entrada h1 { font-size: 32px; }
+  .cuerpo p, .cuerpo li { font-size: 18px; }
+}

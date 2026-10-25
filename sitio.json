@@ -1,0 +1,21 @@
+{
+  "titulo": "juanchica",
+  "dominio": "juanchica.com",
+  "temas": "Ganadería · emprendimiento · nutrición · biotecnología · innovación",
+  "bio": "Ganadero y emprendedor en Colombia. Aquí escribo sobre ganadería y campo, biotecnología, primeros principios y lo que voy aprendiendo en el camino.",
+  "apps_url": "https://juanchica-portal.onrender.com/login",
+  "proyectos": [
+    {
+      "nombre": "Ganadería San Juan",
+      "texto": "Dos fincas en Cimitarra, Magdalena Medio. Estamos pasando de una ganadería extensiva de vieja escuela a pastoreo de alta densidad, con muchos árboles.",
+      "url": "",
+      "enlace": ""
+    },
+    {
+      "nombre": "Yuwú",
+      "texto": "218 hectáreas de selva en San Juan de Frías que se cuidan como bosque.",
+      "url": "https://jfchica86.github.io/reserva-pauji/",
+      "enlace": "Conocer Yuwú"
+    }
+  ]
+}
