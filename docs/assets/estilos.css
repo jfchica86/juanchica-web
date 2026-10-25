@@ -104,6 +104,9 @@ a:hover { text-decoration-color: var(--tinta); }
 .pie .marca svg { color: var(--crudo); }
 .pie .marca span .dom { color: var(--tierra); }
 .pie p { margin: 0; color: var(--tierra); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+.pie .redes { display: flex; flex-wrap: wrap; gap: 20px; font-size: 14px; }
+.pie .redes a { color: var(--tierra); text-decoration: none; }
+.pie .redes a:hover { color: var(--crudo); }
 .pie a.boton { background: var(--crudo); color: var(--tinta) !important; }
 
 @media (max-width: 640px) {

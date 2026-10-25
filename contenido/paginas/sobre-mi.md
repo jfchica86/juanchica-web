@@ -51,4 +51,4 @@ Además de Colombia, el trabajo me ha llevado a China, Filipinas, Vietnam, Taila
 
 ## Dónde encontrarme
 
-[LinkedIn](https://www.linkedin.com/in/jfchica/) · [Substack](https://juanfranciscochica.substack.com)
+[LinkedIn](https://www.linkedin.com/in/jfchica/) · [Substack](https://juanfranciscochica.substack.com) · [X](https://x.com/JFChica) · [Instagram](https://www.instagram.com/jfchica/)

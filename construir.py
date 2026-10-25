@@ -95,7 +95,12 @@ def pagina(titulo: str, descripcion: str, cuerpo: str, ruta_css: str, raiz: str)
 {cuerpo}
 <footer class="pie"><div class="contenedor">
   <a class="marca" href="{raiz}">{ISOTIPO}<span>juanchica<span class="dom">.com</span></span></a>
-  <p>Colombia</p>
+  <nav class="redes">
+    <a href="https://www.linkedin.com/in/jfchica/">LinkedIn</a>
+    <a href="https://juanfranciscochica.substack.com">Substack</a>
+    <a href="https://x.com/JFChica">X</a>
+    <a href="https://www.instagram.com/jfchica/">Instagram</a>
+  </nav>
   <a class="boton" href="{e(SITIO['apps_url'])}">Entrar a las apps</a>
 </div></footer>
 </body>
