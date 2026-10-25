@@ -8,7 +8,7 @@ Colombiano, nacido en Medellín. Médico veterinario y zootecnista de la Univers
 
 ![Grado del MBA en la Escuela Nacional de Desarrollo de la Universidad de Pekín](../assets/img/peking-university-bimba.jpg)
 
-En diciembre de 2009 entró a Premex. Entre 2013 y 2016 vivió en China, dirigiendo las ventas de Asia-Pacífico, y abrió la operación comercial en Filipinas. El trabajo lo llevó también a Vietnam, Tailandia, Singapur, Australia, Rusia, Turquía y Egipto.
+En diciembre de 2009 entró a Premex. Entre 2013 y 2016 vivió en China, dirigiendo las ventas de Asia-Pacífico, y abrió la operación comercial en el sudeste asiático. El trabajo lo llevó también a Vietnam, Tailandia, Singapur, Australia, Rusia, Turquía y Egipto.
 
 Después dirigió Mivita, Asimetrix, Iluma Innovation Labs y Alura, todas parte de Iluma Alliance. Hoy es CEO de Siwa Bioworks. Vive entre Medellín y Durham, en Carolina del Norte.
 
