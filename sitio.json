@@ -3,7 +3,7 @@
   "dominio": "juanchica.com",
   "temas": "Ganadería · emprendimiento · nutrición · biotecnología · innovación",
   "bio": "Ganadero y emprendedor en Colombia. Aquí escribo sobre ganadería y campo, biotecnología, primeros principios y lo que voy aprendiendo en el camino.",
-  "apps_url": "https://juanchica-portal.onrender.com/login",
+  "apps_url": "https://app.juanchica.com/login",
   "proyectos": [
     {
       "nombre": "Ganadería San Juan",
@@ -18,5 +18,5 @@
       "enlace": "Conocer Yuwú"
     }
   ],
-  "dominio_activo": false
+  "dominio_activo": true
 }
