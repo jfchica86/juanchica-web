@@ -96,7 +96,7 @@ def pagina(titulo: str, descripcion: str, cuerpo: str, ruta_css: str, raiz: str)
   <a class="marca" href="{raiz}" aria-label="Inicio">{ISOTIPO}<span>juanchica</span></a>
   <nav class="nav">
     <a href="{raiz}sobre-mi/">Sobre mí</a>
-    <a href="{raiz}blog/">Archivo</a>
+    <a href="{raiz}blog/">Blog</a>
     <a class="boton" href="{e(SITIO['apps_url'])}">Entrar</a>
   </nav>
 </div></header>
@@ -171,7 +171,7 @@ def construir():
   <p class="rotulo">Encuéntrame</p>
   <div class="enlaces">{redes}</div>
 </section>
-<section class="corriente">{resumenes(entradas, '')}</section>
+<section class="corriente"><p class="rotulo">Blog</p>{resumenes(entradas, '')}</section>
 </main>"""
     (SALIDA / "index.html").write_text(
         pagina("juanchica", SITIO["bio"], portada, "assets/estilos.css", ""), encoding="utf-8")
@@ -179,11 +179,11 @@ def construir():
     # Archivo: todos los títulos, por año
     (SALIDA / "blog").mkdir()
     indice = f"""<main class="marco entrada">
-  <h1>Archivo</h1>
+  <h1>Blog</h1>
   {archivo(entradas, '../')}
 </main>"""
     (SALIDA / "blog" / "index.html").write_text(
-        pagina("Archivo · juanchica", "Todas las entradas de juanchica.com", indice, "../assets/estilos.css", "../"), encoding="utf-8")
+        pagina("Blog · juanchica", "Todas las entradas de juanchica.com", indice, "../assets/estilos.css", "../"), encoding="utf-8")
 
     for x in entradas:
         d = SALIDA / "blog" / x["slug"]
@@ -193,7 +193,7 @@ def construir():
   <h1>{e(x['titulo'])}</h1>
   {f'<p class="bajada">{e(x["bajada"])}</p>' if x['bajada'] else ''}
   <div class="cuerpo">{x['html']}</div>
-  <a class="volver" href="../">← Archivo</a>
+  <a class="volver" href="../">← Blog</a>
 </article></main>"""
         (d / "index.html").write_text(
             pagina(f"{x['titulo']} · juanchica", x["bajada"] or x["titulo"], cuerpo, "../../assets/estilos.css", "../../"),
