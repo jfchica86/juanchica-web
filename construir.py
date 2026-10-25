@@ -14,6 +14,7 @@ Entradas: contenido/entradas/*.md, cada una con cabecera:
 El slug (la dirección) sale del nombre del archivo: 2026-10-25-mi-entrada.md → /blog/mi-entrada/
 Requiere: pip install markdown
 """
+import hashlib
 import html
 import json
 import re
@@ -28,6 +29,8 @@ SALIDA = RAIZ / "docs"
 PLANTILLA = RAIZ / "plantilla"
 SITIO = json.loads((RAIZ / "sitio.json").read_text(encoding="utf-8"))
 ISOTIPO = (PLANTILLA / "isotipo.svg").read_text(encoding="utf-8")
+# Cambia con cada versión de la hoja de estilos, para que el navegador no muestre la vieja
+VERSION_CSS = hashlib.md5((PLANTILLA / "estilos.css").read_bytes()).hexdigest()[:8]
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
          "septiembre", "octubre", "noviembre", "diciembre"]
 FUENTES = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
@@ -86,7 +89,7 @@ def pagina(titulo: str, descripcion: str, cuerpo: str, ruta_css: str, raiz: str)
 <meta property="og:description" content="{e(descripcion)}">
 <link rel="icon" href="{raiz}assets/favicon.svg" type="image/svg+xml">
 {FUENTES}
-<link rel="stylesheet" href="{ruta_css}">
+<link rel="stylesheet" href="{ruta_css}?v={VERSION_CSS}">
 </head>
 <body>
 <header class="cabecera"><div class="marco">
