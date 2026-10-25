@@ -42,7 +42,13 @@ Aquí escribe cada semana sobre algo que vivió y lo que aprendió: el campo, la
 <figure><img src="../assets/img/paises/rusia.jpg" alt="Rusia"><figcaption>Rusia</figcaption></figure>
 <figure><img src="../assets/img/paises/turquia.jpg" alt="Turquía"><figcaption>Turquía</figcaption></figure>
 <figure><img src="../assets/img/paises/egipto.jpg" alt="Egipto"><figcaption>Egipto</figcaption></figure>
-<figure><img src="../assets/img/paises/estados-unidos.jpg" alt="Estados Unidos"><figcaption>Estados Unidos</figcaption></figure>
+<figure><img src="../assets/img/paises/estados-unidos.jpg" alt="Washington"><figcaption>Washington</figcaption></figure>
+<figure><img src="../assets/img/paises/singularity-sf.jpg" alt="Singularity University, San Francisco"><figcaption>Singularity University, San Francisco</figcaption></figure>
+<figure><img src="../assets/img/paises/san-diego.jpg" alt="San Diego"><figcaption>San Diego</figcaption></figure>
+<figure><img src="../assets/img/paises/durham.jpg" alt="Durham, Carolina del Norte"><figcaption>Durham, Carolina del Norte</figcaption></figure>
+<figure><img src="../assets/img/paises/dubai.jpg" alt="Dubái"><figcaption>Dubái</figcaption></figure>
+<figure><img src="../assets/img/paises/peru.jpg" alt="Perú"><figcaption>Perú</figcaption></figure>
+<figure><img src="../assets/img/paises/medellin.jpg" alt="Practicando en Medellín"><figcaption>Practicando en Medellín</figcaption></figure>
 </div>
 
 ## Dónde encontrarlo
