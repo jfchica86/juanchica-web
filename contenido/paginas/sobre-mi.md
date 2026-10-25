@@ -16,12 +16,18 @@ Con su familia está construyendo [Ganadería San Juan](../ganaderia-san-juan/),
 
 Aquí escribe cada semana sobre algo que vivió y lo que aprendió: el campo, la empresa, la biotecnología y la familia.
 
+## Formación
+
+- MBA, Universidad de Pekín (BiMBA, Escuela Nacional de Desarrollo), China
+- MBA, Vlerick Business School, Bélgica
+- Médico Veterinario y Zootecnista, Universidad CES, Medellín
+- Alumni, Singularity University Ventures, Estados Unidos, 2018
+- Agribusiness Seminar, Harvard Business School, 2025
+
 ## Reconocimientos y charlas
 
 - Foro Internacional ASOCEBU 360°, Feria Nacional Cebú, Montería, 2026: *Microbioma y carbono: una nueva visión del suelo para la ganadería del futuro*. [Ver →](https://www.instagram.com/reel/DcRaNWapIoh/)
-- Agribusiness Seminar, Harvard Business School, 2025
 - Egresado Ejemplar, Universidad CES, 2019. [Ver →](https://www.ces.edu.co/informacion-para/informacion-para-egresados/egresados-ejemplares/ganadores-egresados-ejemplares-2019/)
-- Singularity University Ventures, 2018
 - Livestock Philippines Expo, Manila, 2015
 
 ## Por donde ha trabajado
