@@ -2,7 +2,7 @@
   "titulo": "juanchica",
   "dominio": "juanchica.com",
   "temas": "Ganadería · emprendimiento · nutrición · biotecnología · innovación",
-  "bio": "Empresario, finquero y papá. Promotor de la libertad, creador de valor por oficio, inquieto por naturaleza y aprendiz de por vida.",
+  "bio": "Empresario, finquero y papá.",
   "apps_url": "https://app.juanchica.com/login",
   "proyectos": [
     {
@@ -19,5 +19,6 @@
     }
   ],
   "dominio_activo": true,
-  "bio_temas": "Aquí escribo sobre biotecnología, nutrición, innovación, mindset, campo y ganadería."
+  "bio_temas": "Aquí escribo sobre biotecnología, nutrición, innovación, mindset, campo y ganadería.",
+  "bio_detalle": "Promotor de la libertad, creador de valor por oficio, inquieto por naturaleza y aprendiz de por vida."
 }

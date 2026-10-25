@@ -53,8 +53,8 @@ a:hover { text-decoration-color: var(--tinta); }
 
 /* Portada */
 .inicio { padding: 48px 0 8px; border-bottom: 1px solid var(--linea); }
-.intro { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--piedra); margin: 0 0 40px; }
-.intro .quien { color: var(--tinta); font-weight: 400; }
+.intro { font-size: 16px; font-weight: 300; line-height: 1.75; color: var(--piedra); margin: 0 0 40px; }
+.intro .quien { display: block; color: var(--tinta); font-size: 30px; line-height: 1.3; font-weight: 500; letter-spacing: -0.015em; margin-bottom: 14px; }
 .rotulo { font-size: 14px; color: var(--piedra); margin: 0 0 6px; }
 .tarjetas { display: grid; gap: 8px 48px; margin-bottom: 40px; }
 .tarjetas.dos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -124,6 +124,7 @@ a:hover { text-decoration-color: var(--tinta); }
   .nav a.boton { padding: 6px 12px; }
   .inicio { padding-top: 32px; }
   .intro { font-size: 15px; }
+  .intro .quien { font-size: 26px; }
   .tarjetas.dos { grid-template-columns: 1fr; gap: 24px; }
   .tarjetas.cuatro { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; }
   .entrada h1 { font-size: 27px; }

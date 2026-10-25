@@ -173,7 +173,7 @@ def construir():
     )
     portada = f"""<main class="marco">
 <section class="inicio">
-  <p class="intro"><span class="quien">{e(SITIO['bio'])}</span><br>{e(SITIO.get('bio_temas', ''))}</p>
+  <p class="intro"><span class="quien">{e(SITIO['bio'])}</span>{e(SITIO.get('bio_detalle', ''))} {e(SITIO.get('bio_temas', ''))}</p>
   <p class="rotulo">Proyectos</p>
   <div class="tarjetas dos">{proyectos}</div>
   <p class="rotulo">Encuéntrame</p>
@@ -182,7 +182,7 @@ def construir():
 <section class="corriente"><p class="rotulo">Blog</p>{resumenes(entradas, '')}</section>
 </main>"""
     (SALIDA / "index.html").write_text(
-        pagina("juanchica", SITIO["bio"] + " " + SITIO.get("bio_temas", ""), portada, "assets/estilos.css", ""), encoding="utf-8")
+        pagina("juanchica", " ".join(SITIO.get(k, "") for k in ("bio", "bio_detalle", "bio_temas")), portada, "assets/estilos.css", ""), encoding="utf-8")
 
     # Archivo: todos los títulos, por año
     (SALIDA / "blog").mkdir()
