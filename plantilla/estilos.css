@@ -142,3 +142,9 @@ a:hover { text-decoration-color: var(--tinta); }
   .cuerpo p, .cuerpo li { font-size: 16px; }
   .cuerpo img.retrato { float: none; display: block; width: 200px; margin: 0 0 24px; }
 }
+
+/* Notas y fuentes al pie de una entrada */
+.cuerpo .footnote { margin-top: 48px; font-size: 14px; color: var(--piedra); }
+.cuerpo .footnote hr { margin: 0 0 16px; }
+.cuerpo .footnote p, .cuerpo .footnote li { font-size: 14px; line-height: 1.6; }
+.cuerpo sup a { text-decoration: none; color: var(--acento); }
