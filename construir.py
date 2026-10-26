@@ -214,7 +214,7 @@ def construir_idioma(lang: str, slugs_otro: set[str]) -> tuple[int, int]:
     )
     portada = f"""<main class="marco">
 <section class="inicio">
-  <p class="intro"><span class="quien">{e(textos['bio'])}</span>{e(textos.get('bio_detalle', ''))} {e(textos.get('bio_temas', ''))}</p>
+  <p class="intro"><span class="quien">{re.sub(r"\*(.+?)\*", r"<em>\1</em>", e(textos['bio']))}</span>{e(textos.get('bio_detalle', ''))} {e(textos.get('bio_temas', ''))}</p>
   <p class="rotulo">{t['proyectos']}</p>
   <div class="tarjetas dos">{proyectos}</div>
   <p class="rotulo">{t['encuentrame']}</p>
@@ -222,7 +222,7 @@ def construir_idioma(lang: str, slugs_otro: set[str]) -> tuple[int, int]:
 </section>
 <section class="corriente"><p class="rotulo">Blog</p>{resumenes(entradas, lang)}</section>
 </main>"""
-    descripcion = " ".join(textos.get(k, "") for k in ("bio", "bio_detalle", "bio_temas"))
+    descripcion = " ".join(textos.get(k, "") for k in ("bio", "bio_detalle", "bio_temas")).replace("*", "")
     escribir(carpeta, pagina(lang, "juanchica", descripcion, portada, "", ""))
 
     # Blog: todos los títulos, por año
